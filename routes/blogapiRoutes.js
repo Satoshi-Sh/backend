@@ -1,11 +1,7 @@
 const express = require('express')
 const router = express.Router();
+const blogController = require('../controllers/blogController')
 
-
-router.post('/',(req,res)=>{
-    res.status(200).json({
-        success:true
-    })
-})
+router.post('/',blogController.all_posts)
 
 module.exports = router
