@@ -7,7 +7,7 @@ const Category = require("../models/category")
 
 exports.all_posts = (req,res,next)=>{
     Post.find({},)
-    .sort({createdAt:1})
+    .sort({createdAt:-1})
     .populate('user')
     .populate('categories')
     .exec(function(err,all_posts){
@@ -23,3 +23,22 @@ exports.all_posts = (req,res,next)=>{
     })
     
 }
+
+// get a post by id 
+
+exports.get_post = (req,res,next)=>{
+    Post.findById(req.params.id)
+    .populate('user')
+    .populate('categories')
+    .exec((err,post)=>{
+        if(err|!post){
+            res.json(err)
+        }
+        else {
+            
+            res.json(post)
+        }
+    })
+    
+}
+
