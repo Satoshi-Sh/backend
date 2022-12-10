@@ -8,6 +8,7 @@ const PostSchema = new Schema({
     title: {type:String,required:true,min_length:1,maxLength:100},
     text: {type:String, required:true},
     user: {type:Schema.Types.ObjectId, ref:"User",required:true},
+    imageURL: {type:String,default:'https://res.cloudinary.com/dmaijlcxd/image/upload/v1670714070/sample.jpg'},
     categories:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Category'
