@@ -3,11 +3,14 @@ const connectMongoServer = require("./mongoConnect");
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 5000;
 const blogapiRouter = require('./routes/blogapiRoutes')
+const authRouter = require('./routes/authRoutes')
 const path = require('path')
 const cors = require('cors')
 
 
 const app = express();
+
+require('./passport')
 
 // Enable body parser 
 app.use(express.json())
@@ -31,7 +34,7 @@ app.use(express.static(path.join(__dirname,'public')))
 
 
 app.use('/blogapi', blogapiRouter)
-
+app.use('/auth',authRouter)
 
 connectMongoServer()
 

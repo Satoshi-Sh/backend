@@ -37,7 +37,7 @@ function trim(s){
   }
 
 PostSchema.virtual('shorten_text').get(function(){
-    return trim(this.text.slice(0,100)) + ".."
+    return trim(this.text.slice(0,150)) + ".."
 })
 
 // Export model 
