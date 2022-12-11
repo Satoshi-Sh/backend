@@ -17,7 +17,6 @@ router.get('/:id',blogController.get_post)
 
 function verifyToken(req,res,next){
     const auth=req.body['token']
-    console.log(auth)
     if(typeof auth !=='undefined'){
         jwt.verify(auth,process.env.JWT,(err,authData)=>{
            if (err){

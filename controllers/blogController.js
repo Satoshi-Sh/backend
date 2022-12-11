@@ -49,6 +49,8 @@ exports.new_post= (req,res,next) =>{
         title:req.body.title,
         user:res.locals.user,
         text:req.body.text,
+        imageURL:req.body.imageURL,
+        categories:req.body.categories
     }).save((err)=>{
         if(err){
             return next(err)
