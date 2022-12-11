@@ -42,3 +42,22 @@ exports.get_post = (req,res,next)=>{
     
 }
 
+// create a new post 
+
+exports.new_post= (req,res,next) =>{
+    post = new Post ({
+        title:req.body.title,
+        user:res.locals.user,
+        text:req.body.text,
+    }).save((err)=>{
+        if(err){
+            return next(err)
+        }
+        res.json({
+            message:"Post created...",
+            user:req.user,
+            post
+        })
+    })
+}
+
