@@ -24,7 +24,7 @@ app.use(helmet())
 
 // cors setting 
 const corsOption = {
-    origin:'http://localhost:3000',
+    origin:'https://gleaming-erin-blazer.cyclic.app',
     credentials:true,
     optionSuccessStatus:200
 }
