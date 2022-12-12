@@ -1,5 +1,5 @@
 const express = require("express");
-const connectMongoServer = require("./mongoConnect");
+const connectDB = require("./mongoConnect");
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 3000;
 const blogapiRouter = require('./routes/blogapiRoutes')
@@ -43,7 +43,7 @@ app.use('/blogapi', blogapiRouter)
 app.use('/auth',authRouter)
 
 
-connectMongoServer().then(()=>{app.listen(port,()=>{
+connectDB().then(()=>{app.listen(port,()=>{
     console.log(`Server started on port ${port}`)
 })
 })
