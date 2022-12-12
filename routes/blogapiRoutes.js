@@ -8,6 +8,8 @@ router.get('/',blogController.all_posts)
 
 router.get('/categories',categoryController.all_categories)
 router.post('/write',verifyToken,blogController.new_post)
+router.post('/delete/:id', verifyToken, blogController.deletePost)
+router.post('/update/:id',verifyToken, blogController.updatePost)
 
 
 

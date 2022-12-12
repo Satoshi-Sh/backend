@@ -13,3 +13,4 @@ exports.all_categories = (req,res, next) =>{
         res.json(all_categories)
     })
 }
+

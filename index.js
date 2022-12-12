@@ -6,15 +6,21 @@ const blogapiRouter = require('./routes/blogapiRoutes')
 const authRouter = require('./routes/authRoutes')
 const path = require('path')
 const cors = require('cors')
+const compression = require("compression")
+const helmet = require("helmet")
 
 
 const app = express();
 
 require('./passport')
 
+
 // Enable body parser 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+app.use(compression())
+app.use(helmet())
 
 // cors setting 
 const corsOption = {
