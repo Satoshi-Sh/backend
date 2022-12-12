@@ -1,7 +1,7 @@
 const express = require("express");
 const connectMongoServer = require("./mongoConnect");
 const dotenv = require('dotenv').config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const blogapiRouter = require('./routes/blogapiRoutes')
 const authRouter = require('./routes/authRoutes')
 const path = require('path')
@@ -42,11 +42,10 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use('/blogapi', blogapiRouter)
 app.use('/auth',authRouter)
 
-connectMongoServer()
 
-
-app.listen(port,()=>{
+connectMongoServer().then(()=>{app.listen(port,()=>{
     console.log(`Server started on port ${port}`)
+})
 })
 
 
