@@ -24,7 +24,7 @@ app.use(helmet())
 
 // cors setting 
 const corsOption = {
-    origin:'https://gleaming-erin-blazer.cyclic.app',
+    origin:'https://satoshi-sh.github.io/portfolio/',
     credentials:true,
     optionSuccessStatus:200
 }
