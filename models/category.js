@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 
 const CategorySchema = new Schema({
-    name:{type:String,required:true,min_length:1,maxLength:50},
+    name:{type:String,required:true,min_length:1,maxLength:40},
 },{toJSON:{virtuals:true}})
 
 
