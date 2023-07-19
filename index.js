@@ -22,7 +22,7 @@ app.use(helmet());
 
 // cors setting
 const corsOption = {
-  origin: ["https://satoshi-sh.github.io", "http://satoshis-developer.xyz"],
+  origin: ["https://satoshi-sh.github.io", "https://satoshis-developer.xyz"],
   credentials: true,
   optionSuccessStatus: 200,
 };
